@@ -24,6 +24,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:fixed;
+    min-width: 400px;
 }
 
 main {
@@ -31,13 +32,34 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 60%;
+    gap: 2em;
+}
 
-    width: 1000px;
+.tracker {
+    width: 70%;
+    min-width: 400px;
+    padding: 5em 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
 }
 
 
 .timer-display {
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.timer-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1em;
 }
 /****************************************/
 
@@ -48,13 +70,92 @@ h2 {
     color: white;
 }
 
+h3 {
+    width: 100%;
+    font-size: 3rem;
+    color: white;
+    margin: 1em auto;
+    text-align: center;
+}
+
+button{
+    position: relative;
+    padding: 2em 0;
+    width: 10rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  #start {
+    color: green;
+  }
+
+  #pause {
+    color: red;
+  }
+
+  #plus {
+    color: blue;
+  }
+
+  #reset {
+    color: rgb(82, 13, 151);
+  }
+
+  .category-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1em;
+  }
+
+  .category>h2{
+    color: #f441a5;
+  }
+
+/***********PSUEDO STYLES*****************/
 
 
+  button:hover{
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    z-index: 1;
+    animation: glow 8s linear infinite;
+  }
+ 
+  button:before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
 
+  @keyframes glow {
+    0%{
+      background-position: 0%;
+    }
+    100%{
+      background-position: 400%;
+    }
+  }
 
 /***********MEDIA QUERIES*******************/
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     body {
         display: flex;
         justify-content: center;
@@ -76,6 +177,30 @@ h2 {
         color: white;
     }
 
+@media screen and (max-width: 800px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        background-image: url(images/maple-mushroom01.png);
+        width:100%;
+        height:100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment:fixed;
+    }
+
+
+    h2 {
+        margin-top: 20%;
+        font-size: 5rem;
+        color: white;
+    }
+
+
+  }     
 
   } 
 
