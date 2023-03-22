@@ -11,11 +11,31 @@ function hideLeftNav() {
     document.querySelector('.link-list').classList.toggle('change')
 }
 
+/***********PARTICLE JS*******************/
+
+var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+
 /***************************************** TIMER CODE *****************************************/
 
 // Base times
 
-const studyDuration = 50
+const studyDuration = 60
 const gameDuration = 25
 const plusFiveMinutes = 5
 let studyCounter = 0
@@ -38,7 +58,9 @@ const gamingCount = document.querySelector('#game-count')
 startButton.addEventListener('click', startStudyTimer)
 
 function startStudyTimer() {
+    startButton.setAttribute("disabled", "disabled")            //prevent start button from being clicked twice
     let totalStudyTime = studyDuration * 60
+    
 
     let timerInterval = setInterval(function() {
         let displaySeconds = (totalStudyTime % 60).toString().padStart(2, '0')
@@ -51,6 +73,8 @@ function startStudyTimer() {
         if (totalStudyTime < 0) {
             studyCounter++
             studyCount.innerHTML = `Work Sessions: ${studyCounter}`
+            startButton.removeAttribute('disabled')
+            clearInterval(timerInterval)
         }
 
         resetButton.addEventListener('click', event => {
