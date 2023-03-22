@@ -11,4 +11,3 @@ function hideLeftNav() {
     document.querySelector('.hide-right').style.opacity = '1'
 }
 
-// const seconds = Math.floor(Date.now() / 1000);
