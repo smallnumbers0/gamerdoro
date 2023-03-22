@@ -39,6 +39,9 @@ main {
     align-items: center;
     width: 70%;
     gap: 2em;
+    position: absolute;
+    top: 0;
+    right: 50;
    
 }
 
@@ -200,27 +203,33 @@ button {
 
   #start {
     color: green;
+    z-index: 5;
   }
 
   #pause {
     color: red;
+    z-index: 5;
   }
 
   #break {
     color: aqua;
+    z-index: 5;
   }
 
   #plus {
     color: blue;
     white-space: nowrap;
+    z-index: 5;
   }
 
   #finish {
     color: #f441a5;
+    z-index: 5;
   }
 
   #reset {
     color: rgb(82, 13, 151);
+    z-index: 5;
   }
 
   .category-container {
