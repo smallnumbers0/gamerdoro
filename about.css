@@ -1,3 +1,346 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*****************LAYOUT*****************/
+
+html {
+    
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    background-image: url(images/maple-slime.png);
+    width:100%;
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    min-width: 400px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    gap: 2em;
+   
+}
+
+
+.tracker {
+    width: 70%;
+    min-width: 400px;
+    padding: 5em 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+
+.timer-display {
+    margin: 1em auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timer-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+/****************************************/
+
+
+
+/**************NAVBARS*******/
+.contributors-list {
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    height: 43%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 1em;
+}
+
+.link-list {
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    height: 43%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 1em;
+    color: #f441a5 !important;
+}
+
+h4 {
+    width: 100%;
+    color: #f441a5;
+    font-size: 1.5em;
+    margin: 1em auto;
+    text-align: center;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+.change {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.hide-left {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    padding: 0.5em 0;
+    
+}
+
+.hide-right {
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    padding: 0.5em 0;
+}
+/**********INDIVIDUAL STYLES***************/
+
+
+h2 {
+    margin-top: 10%;
+    font-size: 5rem;
+    color: white;
+}
+
+h3 {
+    width: 100%;
+    font-size: 3rem;
+    color: white;
+    margin: 1em auto;
+    text-align: center;
+}
+
+
+button {
+    position: relative;
+    padding: 2em 0.5em;
+    width: 10rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 0.5em;
+  }
+
+  #start {
+    color: green;
+  }
+
+  #pause {
+    color: red;
+  }
+
+  #break {
+    color: aqua;
+  }
+
+  #plus {
+    color: blue;
+    white-space: nowrap;
+  }
+
+  #finish {
+    color: #f441a5;
+  }
+
+  #reset {
+    color: rgb(82, 13, 151);
+  }
+
+  .category-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1em;
+  }
+
+  .category>h2{
+    color: #f441a5;
+  }
+
+
+/***********PSUEDO STYLES*****************/
+
+
+  button:hover{
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    z-index: 1;
+    animation: glow 8s linear infinite;
+  }
+ 
+  button:before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  a:hover {
+    color: #f441a5;
+    transition: 0.7s;
+  }
+
+  @keyframes glow {
+    0%{
+      background-position: 0%;
+    }
+    100%{
+      background-position: 400%;
+    }
+  }
+
+/***********MEDIA QUERIES*******************/
+
+@media screen and (max-width: 1200px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        background-image: url(images/maple-slime01.png);
+        width:100%;
+        height:100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment:fixed;
+    }
+
+
+    h2 {
+        margin-top: 20%;
+        font-size: 5rem;
+        color: white;
+    }
+
+@media screen and (max-width: 980px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        background-image: url(images/maple-slime01.png);
+        width:100%;
+        height:100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment:fixed;
+    }
+
+
+    h2 {
+        margin-top: 20%;
+        font-size: 5rem;
+        color: white;
+    }
+
+    .contributors-list {
+        opacity: 0;
+    }
+    .link-list {
+        opacity: 0;
+    }
+  }     
+
+  } 
+
+  @media screen and (max-width: 600px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        background-image: url(images/maple-slime01.png);
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment:fixed;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+    }
+
+    h2 {
+        margin-top: 20%;
+        font-size: 5rem;
+        color: white;
+    }
+  } 
+
 
 
   /*****ABOUT******/ 
@@ -15,5 +358,4 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding: 2em;
     border-radius: 10px;
-    min-width: 480px;
   }
