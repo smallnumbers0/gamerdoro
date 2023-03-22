@@ -70,7 +70,6 @@ main {
 /**************NAVBARS*******/
 .contributors-list {
     display: flex;
-    
     align-items: center;
     flex-direction: column;
     width: 250px;
@@ -80,7 +79,7 @@ main {
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    padding: 1em;
+    padding: 5em 1em;
 }
 
 .link-list {
@@ -95,7 +94,7 @@ main {
     top: 0;
     background-color: rgb(0, 0, 0, 0.5);
     border-radius: 10px;
-    padding: 1em;
+    padding: 4em 1em;
     color: #f441a5 !important;
 }
 
@@ -129,6 +128,7 @@ ul {
 
 
 .change {
+    /* transform: translateY(-100%); */
     opacity: 0;
     transition: 0.5s;
 }
@@ -137,14 +137,21 @@ ul {
     /* position: absolute;
     top: 0;
     left: 0; */
+    position: fixed;
+    top: 0;
+    left: 65px;
+    z-index: 5;
     padding: 0.5em 0;
-    
 }
 
 .hide-right {
     /* position: absolute;
     top: 0;
     right: 0; */
+    position: fixed;
+    top: 0;
+    right: 65px;
+    z-index: 5;
     padding: 0.5em 0;
 }
 /**********INDIVIDUAL STYLES***************/
@@ -307,6 +314,29 @@ button {
     }
     .link-list {
         opacity: 0;
+    }
+    .hide-left {
+        /* position: absolute;
+        top: 0;
+        left: 0; */
+        position: fixed;
+        top: 0;
+        left: 65px;
+        z-index: 5;
+        padding: 0.5em 0;
+
+    }
+    
+    .hide-right {
+        /* position: absolute;
+        top: 0;
+        right: 0; */
+        position: fixed;
+        top: 0;
+        right: 65px;
+        z-index: 5;
+        padding: 0.5em 0;
+       
     }
   }     
 
