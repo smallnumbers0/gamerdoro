@@ -32,10 +32,11 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 70%;
     gap: 2em;
    
 }
+
 
 .tracker {
     width: 70%;
@@ -43,17 +44,16 @@ main {
     padding: 5em 0;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    margin-bottom: 20%;
 }
 
 
 .timer-display {
-    width: 100%;
+    margin: 1em auto;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 }
 
 .timer-button-container {
@@ -66,8 +66,64 @@ main {
 /****************************************/
 
 
+
+/**************NAVBARS*******/
+.contributors-list {
+    width: 250px;
+    height: 43%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 1em;
+}
+
+h4 {
+    width: 100%;
+    color: #f441a5;
+    font-size: 1.5em;
+    margin: 1em auto;
+    text-align: center;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+.link-list {
+    width: 250px;
+    height: 43%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 1em;
+    color: #f441a5 !important;
+}
+
+
+/**********INDIVIDUAL STYLES***************/
+
+
 h2 {
-    margin-top: 20%;
+    margin-top: 10%;
     font-size: 5rem;
     color: white;
 }
@@ -80,7 +136,9 @@ h3 {
     text-align: center;
 }
 
-button{
+
+
+button {
     position: relative;
     padding: 2em 0;
     width: 10rem;
@@ -105,6 +163,10 @@ button{
 
   #plus {
     color: blue;
+  }
+
+  #finish {
+    color: #f441a5;
   }
 
   #reset {
@@ -144,6 +206,11 @@ button{
     filter: blur(20px);
     opacity: 0;
     transition: opacity 0.5s;
+  }
+
+  a:hover {
+    color: #f441a5;
+    transition: 0.7s;
   }
 
   @keyframes glow {
@@ -213,8 +280,8 @@ button{
         align-items: center;
         background-color: black;
         background-image: url(images/maple-mushroom02.png);
-        width:100%;
-        height:100%;
+        width: 100%;
+        height: 100%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -234,3 +301,18 @@ button{
         color: white;
     }
   } 
+
+
+
+  /*****ABOUT******/ 
+
+  .about-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2.2rem;
+    color: rgb(255, 255, 255);
+  }
