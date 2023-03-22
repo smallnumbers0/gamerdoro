@@ -4,7 +4,7 @@ We highly recommend the 50/25 timer for several reasons:
 
 1. The creator finds 50 minutes of continous work is usually when their brain begins to slow productivity so refreshing the brain by taking a break here will help you get rid of something they have experienced over and over again: MIND BLOCK.
 
-2. It allows for an adequate reward. A 25 minute break is a true break. 5 minutes is only enough time to use the bathroom, or take a small bite of pizza, but not enough to let the brain to fully reset for the next session. This will greatly impact productivity.
+2. It allows for an adequate reward. A 25 minute break is a true break. 5 minutes is only enough time to use the bathroom, or take a small bite of pizza, but not enough to let the brain fully reset for the next session. This will greatly impact productivity.
 
 3. It is easier to track. A college student may study for an average of 5 hours on a given day. Thats 4 Gamerdoro sessions which translates to over 3 hours of studying, and a little under 2 hours of gaming! This is a good balance because we know as gamers, we are always itching to start that next game that's only a click away.
 
