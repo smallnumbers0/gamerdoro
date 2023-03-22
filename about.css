@@ -80,7 +80,7 @@ main {
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    padding: 1em;
+    padding: 4em 1em;
 }
 
 .link-list {
@@ -95,7 +95,7 @@ main {
     top: 0;
     background-color: rgb(0, 0, 0, 0.5);
     border-radius: 10px;
-    padding: 1em;
+    padding: 4em 1em;
     color: #f441a5 !important;
 }
 
@@ -325,7 +325,8 @@ button {
         left: 65px;
         z-index: 5;
         padding: 0.5em 0;
-        opacity: 0;
+        opacity: 0.1;
+        color: transparent;
     }
     
     .hide-right {
@@ -337,7 +338,8 @@ button {
         right: 65px;
         z-index: 5;
         padding: 0.5em 0;
-        opacity: 0;
+        opacity: 0.1;
+        color: transparent;
     }
   }     
 
