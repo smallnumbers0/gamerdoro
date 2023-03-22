@@ -60,8 +60,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
-    gap: 1em;
 }
 /****************************************/
 
@@ -75,7 +75,7 @@ main {
     flex-direction: column;
     width: 250px;
     height: 43%;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -90,7 +90,7 @@ main {
     flex-direction: column;
     width: 250px;
     height: 43%;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     background-color: rgb(0, 0, 0, 0.5);
@@ -111,6 +111,7 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1em auto;
 }
 
 a {
@@ -164,10 +165,9 @@ h3 {
 }
 
 
-
 button {
     position: relative;
-    padding: 2em 0;
+    padding: 2em 0.5em;
     width: 10rem;
     border-radius: 10px;
     border: none;
@@ -178,6 +178,7 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.5s;
+    margin: 0.5em;
   }
 
   #start {
@@ -279,7 +280,7 @@ button {
         color: white;
     }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 980px) {
     body {
         display: flex;
         justify-content: center;
@@ -301,7 +302,12 @@ button {
         color: white;
     }
 
-
+    .contributors-list {
+        opacity: 0;
+    }
+    .link-list {
+        opacity: 0;
+    }
   }     
 
   } 
@@ -337,15 +343,3 @@ button {
 
 
 
-  /*****ABOUT******/ 
-
-  .about-container {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    font-size: 2.2rem;
-    color: rgb(255, 255, 255);
-  }
