@@ -1,0 +1,19 @@
+
+
+  /*****ABOUT******/ 
+
+  .about-container {
+    margin: 5em;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.8rem;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2em;
+    border-radius: 10px;
+    min-width: 480px;
+  }

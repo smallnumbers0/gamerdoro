@@ -1,7 +1,5 @@
-
-
-document.querySelector('.contributors-list').addEventListener('click', hideRightNav)
-document.querySelector('.link-list').addEventListener('click', hideLeftNav)
+document.querySelector('.hide-right').addEventListener('click', hideRightNav)
+document.querySelector('.hide-left').addEventListener('click', hideLeftNav)
 
 function hideRightNav() {
     document.querySelector('.contributors-list').classList.toggle('change')
