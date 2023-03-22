@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Pokemon Hollow';
+  src: url('fonts/Pokemon\ Hollow.ttf') format('truetype');
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -156,6 +161,11 @@ ul {
 }
 /**********INDIVIDUAL STYLES***************/
 
+.title {
+  font-family: 'Pokemon Hollow', 'Ubuntu', sans-serif;
+  letter-spacing: 0.7rem;
+  font-size: 6rem;
+}
 
 h2 {
     margin-top: 10%;
