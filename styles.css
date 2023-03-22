@@ -118,6 +118,11 @@ ul {
     color: #f441a5 !important;
 }
 
+.change {
+    opacity: 0;
+    transition: 0.5s;
+}
+
 
 /**********INDIVIDUAL STYLES***************/
 
@@ -188,6 +193,7 @@ button {
   .category>h2{
     color: #f441a5;
   }
+
 
 /***********PSUEDO STYLES*****************/
 
