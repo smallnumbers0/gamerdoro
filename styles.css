@@ -286,7 +286,7 @@ button {
         font-size: 5rem;
         color: white;
     }
-
+}
 @media screen and (max-width: 980px) {
     body {
         display: flex;
@@ -324,6 +324,7 @@ button {
         left: 65px;
         z-index: 5;
         padding: 0.5em 0;
+        opacity: 0;
 
     }
     
@@ -336,11 +337,11 @@ button {
         right: 65px;
         z-index: 5;
         padding: 0.5em 0;
+        opacity: 0;
        
     }
   }     
 
-  } 
 
   @media screen and (max-width: 600px) {
     body {
