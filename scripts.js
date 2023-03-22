@@ -1,7 +1,7 @@
 
 
-document.querySelector('.hide-right').addEventListener('click', hideRightNav)
-document.querySelector('.hide-left').addEventListener('click', hideLeftNav)
+document.querySelector('#nav-icon1').addEventListener('click', hideRightNav)
+document.querySelector('#nav-icon2').addEventListener('click', hideLeftNav)
 
 function hideRightNav() {
     document.querySelector('.contributors-list').classList.toggle('change')
@@ -10,6 +10,16 @@ function hideRightNav() {
 function hideLeftNav() {
     document.querySelector('.link-list').classList.toggle('change')
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navIcons = document.querySelectorAll('#nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4');
+    navIcons.forEach(function(navIcon) {
+        navIcon.addEventListener('click', function() {
+            navIcon.classList.toggle('open');
+        });
+    });
+});
+
 
 /***************************************** TIMER CODE *****************************************/
 
@@ -37,14 +47,26 @@ const gamingCount = document.querySelector('#game-count')
 // Start Button event listener and function
 startButton.addEventListener('click', startStudyTimer)
 
+
+
+plusButton.addEventListener('click', addFiveToTimer)
 function startStudyTimer() {
     let totalStudyTime = studyDuration * 60
+
+
+    function addFiveToTimer(){
+        let isFiveMinuteTimerClicked = true
+        if (isFiveMinuteTimerClicked) {
+            displayMinutes += 5
+        }
+        isFiveMinuteTimerClicked = false
+    }
 
     let timerInterval = setInterval(function() {
         let displaySeconds = (totalStudyTime % 60).toString().padStart(2, '0')
         let displayMinutes = (Math.floor(totalStudyTime / 60)).toString().padStart(2, '0')
 
-        countdownDisplay.innerHTML = `${displayMinutes} : ${displaySeconds}`
+        countdownDisplay.innerHTML = `${displayMinutes}:${displaySeconds}`
 
         totalStudyTime--
 
@@ -72,7 +94,14 @@ function startGameTimer() {}
 // Plus 5 event listener and function
 plusButton.addEventListener('click', addFiveToTimer)
 
-function addFiveToTimer() {}
+function addFiveToTimer(){
+    let isFiveMinuteTimerClicked = true
+    if (isFiveMinuteTimerClicked) {
+        displayMinutes += 5
+    }
+    isFiveMinuteTimerClicked = false
+
+}
 
 // Finish Button event listener and function
 finishButton.addEventListener('click', endTimer)
