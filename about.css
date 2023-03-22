@@ -137,14 +137,21 @@ ul {
     /* position: absolute;
     top: 0;
     left: 0; */
+    position: fixed;
+    top: 0;
+    left: 65px;
+    z-index: 5;
     padding: 0.5em 0;
-    
 }
 
 .hide-right {
     /* position: absolute;
     top: 0;
     right: 0; */
+    position: fixed;
+    top: 0;
+    right: 65px;
+    z-index: 5;
     padding: 0.5em 0;
 }
 /**********INDIVIDUAL STYLES***************/
@@ -306,6 +313,30 @@ button {
         opacity: 0;
     }
     .link-list {
+        opacity: 0;
+    }
+
+    .hide-left {
+        /* position: absolute;
+        top: 0;
+        left: 0; */
+        position: fixed;
+        top: 0;
+        left: 65px;
+        z-index: 5;
+        padding: 0.5em 0;
+        opacity: 0;
+    }
+    
+    .hide-right {
+        /* position: absolute;
+        top: 0;
+        right: 0; */
+        position: fixed;
+        top: 0;
+        right: 65px;
+        z-index: 5;
+        padding: 0.5em 0;
         opacity: 0;
     }
   }     
