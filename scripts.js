@@ -54,6 +54,7 @@ let studyCounter = 0
 let gamingCounter = 0
 
 // Buttons
+const title = document.querySelector('title')
 const startButton = document.querySelector('#start')
 const pauseButton = document.querySelector('#pause')
 const breakButton = document.querySelector('#break')
@@ -75,7 +76,6 @@ plusButton.addEventListener('click', addFiveToTimer)
 function startStudyTimer() {
     startButton.setAttribute("disabled", "disabled")            //prevent start button from being clicked twice
     let totalStudyTime = studyDuration * 60
-    
 
 
     function addFiveToTimer(){
@@ -90,18 +90,25 @@ function startStudyTimer() {
         let displaySeconds = (totalStudyTime % 60).toString().padStart(2, '0')
         let displayMinutes = (Math.floor(totalStudyTime / 60)).toString().padStart(2, '0')
 
-        countdownDisplay.innerHTML = `${displayMinutes}:${displaySeconds}`
+
+       
+
+        countdownDisplay.innerHTML = `${displayMinutes} : ${displaySeconds}`
+        title.innerHTML = `${displayMinutes} : ${displaySeconds}`
+
 
         totalStudyTime--
 
         if (totalStudyTime < 0) {
             studyCounter++
             studyCount.innerHTML = `Work Sessions: ${studyCounter}`
+            title.innerHTML = "It's Game Time!!!"
             startButton.removeAttribute('disabled')
             clearInterval(timerInterval)
         }
 
         resetButton.addEventListener('click', event => {
+            startButton.removeAttribute('disabled')
             clearInterval(timerInterval)
         })
     }, 1000)
