@@ -47,7 +47,7 @@ var count_particles, stats, update;
 
 // Base times
 
-const studyDuration = 50
+let studyDuration = 50  //Had to change this to let. Const was preventing addFiveToTimer from adding 5 past 50 minutes
 const gameDuration = 25
 const plusFiveMinutes = 5
 let studyCounter = 0
@@ -70,33 +70,18 @@ const gamingCount = document.querySelector('#game-count')
 // Start Button event listener and function
 startButton.addEventListener('click', startStudyTimer)
 
-
-
-plusButton.addEventListener('click', addFiveToTimer)
 function startStudyTimer() {
+    
     startButton.setAttribute("disabled", "disabled")            //prevent start button from being clicked twice
     let totalStudyTime = studyDuration * 60
-
-
-    function addFiveToTimer(){
-        let isFiveMinuteTimerClicked = true
-        if (isFiveMinuteTimerClicked) {
-            displayMinutes += 5
-        }
-        isFiveMinuteTimerClicked = false
-    }
 
     let timerInterval = setInterval(function() {
         let displaySeconds = (totalStudyTime % 60).toString().padStart(2, '0')
         let displayMinutes = (Math.floor(totalStudyTime / 60)).toString().padStart(2, '0')
 
 
-       
-
         countdownDisplay.innerHTML = `${displayMinutes} : ${displaySeconds}`
         title.innerHTML = `${displayMinutes} : ${displaySeconds}`
-
-
 
         totalStudyTime--
         
@@ -114,7 +99,13 @@ function startStudyTimer() {
             countdownDisplay.innerHTML = '00:00'
         })
     }, 1000)
+
+        plusButton.addEventListener('click', event => {
+            totalStudyTime += plusFiveMinutes * 60
+        })
 }
+
+
 
 // Pause Button event listener and function
 pauseButton.addEventListener('click', pauseTimer)
@@ -127,15 +118,10 @@ breakButton.addEventListener('click', startGameTimer)
 function startGameTimer() {}
 
 // Plus 5 event listener and function
-plusButton.addEventListener('click', addFiveToTimer)
-
-function addFiveToTimer() {
-    
-    // let currentStudyTime = countdownDisplay.innerHTML.split(':') //[minutes , seconds]
-    // let displayMinutes = Number(currentStudyTime[0]) + plusFiveMinutes
-    // let displaySeconds = currentStudyTime[1]
-    // countdownDisplay.innerHTML = `${displayMinutes} : ${displaySeconds}`
-}
+// plusButton.addEventListener('click', addFiveToTimer)
+// plusButton.addEventListener('click', event => {             //Added to startStudyTimer
+//     totalStudyTime += plusFiveMinutes * 60
+// })
 
 
 // Finish Button event listener and function
