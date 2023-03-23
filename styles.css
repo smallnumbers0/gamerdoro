@@ -236,10 +236,9 @@ button {
     transition: 0.5s;
     margin: 0.5em;
     z-index: 5;
-   
   }
 
-  #start {
+  #study {
     color: green;
     z-index: 5;
   }
@@ -249,7 +248,7 @@ button {
     z-index: 5;
   }
 
-  #break {
+  #game {
     color: aqua;
     z-index: 5;
   }

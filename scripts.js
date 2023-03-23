@@ -1,5 +1,3 @@
-
-
 document.querySelector('#nav-icon1').addEventListener('click', hideRightNav)
 document.querySelector('#nav-icon2').addEventListener('click', hideLeftNav)
 
@@ -21,8 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-
 
 /***************************************** PARTICLE JS *****************************************/
 
@@ -48,35 +44,31 @@ var count_particles, stats, update;
 /***************************************** TIMER CODE *****************************************/
 
 // Base times
-
-let studyDuration = 0.1  //Had to change this to let. Const was preventing addFiveToTimer from adding 5 past 50 minutes
-let gameDuration = 0.2
-let plusFiveMinutes = 0.3
+let studyDuration = 50
+let gameDuration = 25
+let plusFiveMinutes = 5
 let studyCounter = 0
 let gameCounter = 0
 
 // Buttons
 const title = document.querySelector('title')
-const startButton = document.querySelector('#start')
+const studyButton = document.querySelector('#study')
 const pauseButton = document.querySelector('#pause')
-const breakButton = document.querySelector('#break')
+const gameButton = document.querySelector('#game')
 const plusButton = document.querySelector('#plus')
-const finishButton = document.querySelector('#finish')
 const resetButton = document.querySelector('#reset')
 const countdownDisplay = document.querySelector('#countdown')
-const studyCount = document.querySelector('#work-count')
+const studyCount = document.querySelector('#study-count')
 const gamingCount = document.querySelector('#game-count')
 
-/***************************************** CHANGE ALL FUNCTIONS TO ANONYMOUS FUNCTIONS *****************************************/
-
 // Start Button event listener and function
-startButton.addEventListener('click', startStudyTimer)
+studyButton.addEventListener('click', startStudyTimer)
 
 function startStudyTimer() {
 
     // prevent start button from being clicked twice
-    startButton.setAttribute("disabled", "disabled")
-    breakButton.setAttribute("disabled", "disabled")
+    studyButton.setAttribute("disabled", "disabled")
+    gameButton.setAttribute("disabled", "disabled")
     let totalStudyTime = studyDuration * 60
     let pause = false
     let timerInterval = setInterval(function() {
@@ -96,10 +88,10 @@ function startStudyTimer() {
         
         if (totalStudyTime < 0) {
             studyCounter++
-            studyCount.innerHTML = `Work Sessions: ${studyCounter}`
+            studyCount.innerHTML = `Study Sessions: ${studyCounter}`
             title.innerHTML = "It's Game Time!!!"
-            startButton.removeAttribute('disabled')
-            breakButton.removeAttribute('disabled')
+            studyButton.removeAttribute('disabled')
+            gameButton.removeAttribute('disabled')
             clearInterval(timerInterval)
         }
 
@@ -108,8 +100,8 @@ function startStudyTimer() {
                 pauseButton.innerHTML = 'Pause'
                 title.innerHTML = `Gamerdoro`
             }
-            startButton.removeAttribute('disabled')
-            breakButton.removeAttribute('disabled')
+            studyButton.removeAttribute('disabled')
+            gameButton.removeAttribute('disabled')
             clearInterval(timerInterval)
             countdownDisplay.innerHTML = '00:00'
             title.innerHTML = `Gamerdoro`
@@ -128,34 +120,34 @@ function startStudyTimer() {
 }
 
 // Break Button event listener and function
-breakButton.addEventListener('click', startGameTimer)
+gameButton.addEventListener('click', startGameTimer)
 
 function startGameTimer() {
 
     // prevent break button from being clicked twice
-    breakButton.setAttribute("disabled", "disabled")
-    startButton.setAttribute("disabled", "disabled")
-    let totalBreakTime = gameDuration * 60
+    gameButton.setAttribute("disabled", "disabled")
+    studyButton.setAttribute("disabled", "disabled")
+    let totalGameTime = gameDuration * 60
     let pause = false
     let timerInterval = setInterval(function() {
         if(pause) { //pause is false so timer is going | => line 114
             return
         }
-        let displaySeconds = (totalBreakTime % 60).toString().padStart(2, '0')
-        let displayMinutes = (Math.floor(totalBreakTime / 60)).toString().padStart(2, '0')
+        let displaySeconds = (totalGameTime % 60).toString().padStart(2, '0')
+        let displayMinutes = (Math.floor(totalGameTime / 60)).toString().padStart(2, '0')
 
 
         countdownDisplay.innerHTML = `${displayMinutes}:${displaySeconds}`
         title.innerHTML = `${displayMinutes}:${displaySeconds}`
 
-        totalBreakTime--
+        totalGameTime--
         
-        if (totalBreakTime < 0) {
+        if (totalGameTime < 0) {
             gameCounter++
             gamingCount.innerHTML = `Game Sessions: ${gameCounter}`
             title.innerHTML = "GAME OVER!!!"
-            breakButton.removeAttribute('disabled')
-            startButton.removeAttribute('disabled')
+            gameButton.removeAttribute('disabled')
+            studyButton.removeAttribute('disabled')
             clearInterval(timerInterval)
         }
 
@@ -164,8 +156,8 @@ function startGameTimer() {
                 pauseButton.innerHTML = 'Pause'
                 title.innerHTML = `Gamerdoro`
             }
-            breakButton.removeAttribute('disabled')
-            startButton.removeAttribute('disabled')
+            gameButton.removeAttribute('disabled')
+            studyButton.removeAttribute('disabled')
             clearInterval(timerInterval)
             countdownDisplay.innerHTML = '00:00'
             title.innerHTML = `Gamerdoro`
@@ -173,7 +165,7 @@ function startGameTimer() {
     }, 1000)
 
         plusButton.addEventListener('click', event => {
-            totalBreakTime += plusFiveMinutes * 60
+            totalGameTime += plusFiveMinutes * 60
         })
 
         pauseButton.addEventListener('click', () => {       
