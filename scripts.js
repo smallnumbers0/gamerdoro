@@ -3,6 +3,7 @@ document.querySelector('#nav-icon2').addEventListener('click', hideLeftNav)
 
 function hideRightNav() {
     document.querySelector('.contributors-list').classList.toggle('change')
+   
 }
 
 function hideLeftNav() {
