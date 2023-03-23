@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Pokemon Hollow';
+  src: url('fonts/Pokemon\ Hollow.ttf') format('truetype');
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -34,6 +39,10 @@ main {
     align-items: center;
     width: 70%;
     gap: 2em;
+
+    position: absolute;
+    top: 0;
+    right: 50;
 }
 
 .tracker {
@@ -157,7 +166,6 @@ ul {
   transition: .25s ease-in-out;
 }
 
-
 #nav-icon1 span:nth-child(1), #nav-icon2 span:nth-child(1) {
   top: 18px;
   left: 0px;
@@ -183,6 +191,13 @@ ul {
 }
 
 /**********INDIVIDUAL STYLES***************/
+
+.title {
+  font-family: 'Pokemon Hollow', 'Ubuntu', sans-serif;
+  letter-spacing: 0.7rem;
+  font-size: 6rem;
+}
+
 
 h2 {
     margin-top: 10%;
@@ -216,28 +231,34 @@ button {
 
   #start {
     color: green;
+    z-index: 5;
   }
 
   #pause {
     color: red;
+    z-index: 5;
   }
 
   #break {
     color: aqua;
+    z-index: 5;
   }
 
   #plus {
     color: blue;
     white-space: nowrap;
+    z-index: 5;
   }
 
   #finish {
     color: #f441a5;
+    z-index: 5;
   }
 
   #reset {
     color: rgb(82, 13, 151);
     font-weight: bold;
+    z-index: 5;
   }
 
   .category-container {
