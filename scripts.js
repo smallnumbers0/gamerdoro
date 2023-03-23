@@ -13,13 +13,14 @@ function hideLeftNav() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const navIcons = document.querySelectorAll('#nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4');
+    const navIcons = document.querySelectorAll('#nav-icon1, #nav-icon2');
     navIcons.forEach(function(navIcon) {
         navIcon.addEventListener('click', function() {
             navIcon.classList.toggle('open');
         });
     });
 });
+
 
 
 /***************************************** PARTICLE JS *****************************************/

@@ -86,6 +86,7 @@ main {
     border-radius: 10px;
     padding: 5em 1em;
     color: #f441a5;
+    z-index: 3;
 }
 
 .link-list {
@@ -130,17 +131,21 @@ ul {
 
 .hide-left, .hide-right {
     width: 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 5;
     padding: 0.5em 0;
     background: transparent;
 }
 
+.hide-left {
+  position: fixed;
+  top: 0;
+  left: 1%;
+}
+
 .hide-right {
-    left: auto;
-    right: 0;
+  position: fixed;
+  top: 0;
+  right: 1%;
 }
 
 /***BRANDON'S BUTTON ADDITIONS***/
@@ -170,12 +175,14 @@ ul {
   top: 18px;
   left: 0px;
   transform: rotate(40deg);
+
 }
 
 #nav-icon1 span:nth-child(2), #nav-icon2 span:nth-child(2) {
   top: 18px;
   left: 18px;
   transform: rotate(140deg);
+
 }
 
 #nav-icon1.open span:nth-child(1), #nav-icon2.open span:nth-child(1) {
@@ -227,6 +234,8 @@ button {
     cursor: pointer;
     transition: 0.5s;
     margin: 0.5em;
+    z-index: 5;
+   
   }
 
   #start {
@@ -274,7 +283,7 @@ button {
 
 
 /***********PSUEDO STYLES*****************/
-
+  
 
   button:hover{
     background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
@@ -411,6 +420,7 @@ button {
         justify-content: center;
         align-items: center;
         width: 500px;
+        z-index: 11;
     }
 
     h2 {
@@ -420,5 +430,9 @@ button {
     }
   } 
 
+/*********PARTICLE JS***********/
 
+canvas.particles-js-canvas-el {
+  z-index: 1;
+}
 

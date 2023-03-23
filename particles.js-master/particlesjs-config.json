@@ -1,5 +1,6 @@
 {
   "particles": {
+    "z-index": -1,
     "number": {
       "value": 80,
       "density": {
@@ -75,7 +76,7 @@
         "mode": "repulse"
       },
       "onclick": {
-        "enable": true,
+        "enable": false,
         "mode": "push"
       },
       "resize": true
