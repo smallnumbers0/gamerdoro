@@ -101,9 +101,14 @@ function startStudyTimer() {
         }
 
         resetButton.addEventListener('click', event => {
+            if(pauseButton.innerHTML === 'Resume') {
+                pauseButton.innerHTML = 'Pause'
+                title.innerHTML = `Gamerdoro`
+            }
             startButton.removeAttribute('disabled')
             clearInterval(timerInterval)
             countdownDisplay.innerHTML = '00:00'
+            title.innerHTML = `Gamerdoro`
         })
     }, 1000)
 
@@ -113,7 +118,7 @@ function startStudyTimer() {
 
         pauseButton.addEventListener('click', () => {       
                 pause = !pause                         //pause turns to true 
-                pauseButton.innerHTML = pause ? "Resume" : "Pause"
+                pauseButton.innerHTML = pause ? 'Resume' : 'Pause'
                 title.innerHTML = `${displayMinutes}:${displaySeconds}`
         })
 }
@@ -155,9 +160,14 @@ function startGameTimer() {
         }
 
         resetButton.addEventListener('click', event => {
+            if(pauseButton.innerHTML === 'Resume') {
+                pauseButton.innerHTML = 'Pause'
+                title.innerHTML = `Gamerdoro`
+            }
             breakButton.removeAttribute('disabled')
             clearInterval(timerInterval)
             countdownDisplay.innerHTML = '00:00'
+            title.innerHTML = `Gamerdoro`
         })
     }, 1000)
 
@@ -167,19 +177,12 @@ function startGameTimer() {
 
         pauseButton.addEventListener('click', () => {       
             pause = !pause                         //pause turns to true 
-            pauseButton.innerHTML = pause ? "Resume" : "Pause"
+            pauseButton.innerHTML = pause ? 'Resume' : 'Pause'
             title.innerHTML = `${displayMinutes}:${displaySeconds}`
     })
 
 
 }
-
-// Plus 5 event listener and function
-// plusButton.addEventListener('click', addFiveToTimer)
-// plusButton.addEventListener('click', event => {             //Added to startStudyTimer
-//     totalStudyTime += plusFiveMinutes * 60
-// })
-
 
 // Finish Button event listener and function
 finishButton.addEventListener('click', endTimer)
