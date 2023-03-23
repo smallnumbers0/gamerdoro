@@ -39,12 +39,11 @@ main {
     align-items: center;
     width: 70%;
     gap: 2em;
+
     position: absolute;
     top: 0;
     right: 50;
-   
 }
-
 
 .tracker {
     width: 70%;
@@ -53,7 +52,6 @@ main {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
 }
-
 
 .timer-display {
     margin: 1em auto;
@@ -76,34 +74,24 @@ main {
 
 
 /**************NAVBARS*******/
-.contributors-list {
+.contributors-list, .link-list {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 250px;
-    height: 43%;
     position: fixed;
     right: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 5em 1em;
+    color: #f441a5;
 }
 
 .link-list {
-    display: flex;
-    
-    align-items: center;
-    flex-direction: column;
-    width: 250px;
-    height: 43%;
-    position: fixed;
+    right: auto;
     left: 0;
     top: 0;
-    background-color: rgb(0, 0, 0, 0.5);
-    border-radius: 10px;
-    padding: 4em 1em;
-    color: #f441a5 !important;
 }
 
 h4 {
@@ -134,34 +122,74 @@ ul {
     list-style: none;
 }
 
-
 .change {
     /* transform: translateY(-100%); */
     opacity: 0;
     transition: 0.5s;
 }
 
-.hide-left {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
+.hide-left, .hide-right {
+    width: 50px;
     position: fixed;
     top: 0;
-    left: 65px;
+    left: 0;
     z-index: 5;
     padding: 0.5em 0;
+    background: transparent;
 }
 
 .hide-right {
-    /* position: absolute;
-    top: 0;
-    right: 0; */
-    position: fixed;
-    top: 0;
-    right: 65px;
-    z-index: 5;
-    padding: 0.5em 0;
+    left: auto;
+    right: 0;
 }
+
+/***BRANDON'S BUTTON ADDITIONS***/
+#nav-icon1, #nav-icon2 {
+  width: 50px;
+  height: 45px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon1 span, #nav-icon2 span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 60%;
+  background: radial-gradient(circle, rgba(242,224,188,1) 0%, rgba(255,150,58,1) 100%);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1), #nav-icon2 span:nth-child(1) {
+  top: 18px;
+  left: 0px;
+  transform: rotate(40deg);
+}
+
+#nav-icon1 span:nth-child(2), #nav-icon2 span:nth-child(2) {
+  top: 18px;
+  left: 18px;
+  transform: rotate(140deg);
+}
+
+#nav-icon1.open span:nth-child(1), #nav-icon2.open span:nth-child(1) {
+  width: 45px;
+  left: 2px;
+  transform: rotate(225deg);
+}
+
+#nav-icon1.open span:nth-child(2), #nav-icon2.open span:nth-child(2) {
+  width: 45px;
+  left: 2px;
+  transform: rotate(-45deg);
+}
+
 /**********INDIVIDUAL STYLES***************/
 
 .title {
@@ -169,6 +197,7 @@ ul {
   letter-spacing: 0.7rem;
   font-size: 6rem;
 }
+
 
 h2 {
     margin-top: 10%;
@@ -183,7 +212,6 @@ h3 {
     margin: 1em auto;
     text-align: center;
 }
-
 
 button {
     position: relative;
@@ -229,6 +257,7 @@ button {
 
   #reset {
     color: rgb(82, 13, 151);
+    font-weight: bold;
     z-index: 5;
   }
 
