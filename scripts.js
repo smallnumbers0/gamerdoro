@@ -111,6 +111,7 @@ function startStudyTimer() {
         resetButton.addEventListener('click', event => {
             startButton.removeAttribute('disabled')
             clearInterval(timerInterval)
+            countdownDisplay.innerHTML = '00:00'
         })
     }, 1000)
 }
