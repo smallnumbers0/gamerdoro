@@ -76,8 +76,13 @@ function startStudyTimer() {
     // prevent start button from being clicked twice
     startButton.setAttribute("disabled", "disabled")
     let totalStudyTime = studyDuration * 60
-
+    let pause = false
     let timerInterval = setInterval(function() {
+
+        if(pause) { //pause is false so timer is going | => line 114
+            return
+        }
+
         let displaySeconds = (totalStudyTime % 60).toString().padStart(2, '0')
         let displayMinutes = (Math.floor(totalStudyTime / 60)).toString().padStart(2, '0')
 
@@ -105,6 +110,12 @@ function startStudyTimer() {
         plusButton.addEventListener('click', event => {
             totalStudyTime += plusFiveMinutes * 60
         })
+
+        pauseButton.addEventListener('click', () => {       
+                pause = !pause                         //pause turns to true 
+                pauseButton.innerHTML = pause ? "Resume" : "Pause"
+                title.innerHTML = `${displayMinutes}:${displaySeconds}`
+        })
 }
 
 
@@ -121,8 +132,11 @@ function startGameTimer() {
     // prevent start button from being clicked twice
     breakButton.setAttribute("disabled", "disabled")
     let totalBreakTime = gameDuration * 60
-
+    let pause = false
     let timerInterval = setInterval(function() {
+        if(pause) { //pause is false so timer is going | => line 114
+            return
+        }
         let displaySeconds = (totalBreakTime % 60).toString().padStart(2, '0')
         let displayMinutes = (Math.floor(totalBreakTime / 60)).toString().padStart(2, '0')
 
@@ -150,6 +164,13 @@ function startGameTimer() {
         plusButton.addEventListener('click', event => {
             totalBreakTime += plusFiveMinutes * 60
         })
+
+        pauseButton.addEventListener('click', () => {       
+            pause = !pause                         //pause turns to true 
+            pauseButton.innerHTML = pause ? "Resume" : "Pause"
+            title.innerHTML = `${displayMinutes}:${displaySeconds}`
+    })
+
 
 }
 
