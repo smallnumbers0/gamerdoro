@@ -48,6 +48,7 @@ main {
 .tracker {
     width: 70%;
     min-width: 400px;
+    max-width: 650px;
     padding: 5em 0;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
@@ -127,6 +128,7 @@ ul {
     /* transform: translateY(-100%); */
     opacity: 0;
     transition: 0.5s;
+    display: none;
 }
 
 .hide-left, .hide-right {
@@ -204,7 +206,6 @@ ul {
   letter-spacing: 0.7rem;
   font-size: 6rem;
 }
-
 
 h2 {
     margin-top: 10%;
@@ -359,42 +360,36 @@ button {
         background-attachment:fixed;
     }
 
-
     h2 {
         margin-top: 20%;
         font-size: 5rem;
         color: white;
     }
 
-    .contributors-list {
-        opacity: 0;
+    .contributors-list, .link-list {
+      opacity: 0;
+      display: none;
     }
-    .link-list {
-        opacity: 0;
-    }
+
     .hide-left {
-        /* position: absolute;
-        top: 0;
-        left: 0; */
         position: fixed;
         top: 0;
         left: 65px;
         z-index: 5;
         padding: 0.5em 0;
         opacity: 0;
+        display: none;
 
     }
     
     .hide-right {
-        /* position: absolute;
-        top: 0;
-        right: 0; */
         position: fixed;
         top: 0;
         right: 65px;
         z-index: 5;
         padding: 0.5em 0;
         opacity: 0;
+        display: none;
        
     }
   }     

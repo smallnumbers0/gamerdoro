@@ -127,12 +127,6 @@ function startStudyTimer() {
         })
 }
 
-
-// Pause Button event listener and function
-pauseButton.addEventListener('click', pauseTimer)
-
-function pauseTimer() {}
-
 // Break Button event listener and function
 breakButton.addEventListener('click', startGameTimer)
 
@@ -187,16 +181,3 @@ function startGameTimer() {
             pauseButton.innerHTML = pause ? 'Resume' : 'Pause'
             title.innerHTML = `${displayMinutes}:${displaySeconds}`
     })
-        
-
-}
-
-// Finish Button event listener and function
-finishButton.addEventListener('click', endTimer)
-
-function endTimer() {}
-
-// Reset Timer event listener and function
-resetButton.addEventListener('click', resetTimer)
-
-function resetTimer() {}
