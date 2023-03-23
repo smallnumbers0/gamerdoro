@@ -35,7 +35,7 @@ var count_particles, stats, update;
 
 // Base times
 
-const studyDuration = 60
+const studyDuration = 50
 const gameDuration = 25
 const plusFiveMinutes = 5
 let studyCounter = 0
@@ -65,11 +65,9 @@ function startStudyTimer() {
     let timerInterval = setInterval(function() {
         let displaySeconds = (totalStudyTime % 60).toString().padStart(2, '0')
         let displayMinutes = (Math.floor(totalStudyTime / 60)).toString().padStart(2, '0')
-
         countdownDisplay.innerHTML = `${displayMinutes} : ${displaySeconds}`
-
         totalStudyTime--
-
+        
         if (totalStudyTime < 0) {
             studyCounter++
             studyCount.innerHTML = `Work Sessions: ${studyCounter}`
@@ -96,7 +94,14 @@ function startGameTimer() {}
 // Plus 5 event listener and function
 plusButton.addEventListener('click', addFiveToTimer)
 
-function addFiveToTimer() {}
+function addFiveToTimer() {
+    
+    // let currentStudyTime = countdownDisplay.innerHTML.split(':') //[minutes , seconds]
+    // let displayMinutes = Number(currentStudyTime[0]) + plusFiveMinutes
+    // let displaySeconds = currentStudyTime[1]
+    // countdownDisplay.innerHTML = `${displayMinutes} : ${displaySeconds}`
+    
+}
 
 // Finish Button event listener and function
 finishButton.addEventListener('click', endTimer)
