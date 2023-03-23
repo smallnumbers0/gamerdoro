@@ -74,6 +74,7 @@ function startStudyTimer() {
 
     // prevent start button from being clicked twice
     startButton.setAttribute("disabled", "disabled")
+    breakButton.setAttribute("disabled", "disabled")
     let totalStudyTime = studyDuration * 60
 
     let timerInterval = setInterval(function() {
@@ -91,11 +92,13 @@ function startStudyTimer() {
             studyCount.innerHTML = `Work Sessions: ${studyCounter}`
             title.innerHTML = "It's Game Time!!!"
             startButton.removeAttribute('disabled')
+            breakButton.removeAttribute('disabled')
             clearInterval(timerInterval)
         }
 
         resetButton.addEventListener('click', event => {
             startButton.removeAttribute('disabled')
+            breakButton.removeAttribute('disabled')
             clearInterval(timerInterval)
             countdownDisplay.innerHTML = '00:00'
         })
@@ -117,8 +120,9 @@ breakButton.addEventListener('click', startGameTimer)
 
 function startGameTimer() {
 
-    // prevent start button from being clicked twice
+    // prevent break button from being clicked twice
     breakButton.setAttribute("disabled", "disabled")
+    startButton.setAttribute("disabled", "disabled")
     let totalBreakTime = gameDuration * 60
 
     let timerInterval = setInterval(function() {
@@ -136,11 +140,13 @@ function startGameTimer() {
             gamingCount.innerHTML = `Game Sessions: ${gameCounter}`
             title.innerHTML = "GAME OVER!!!"
             breakButton.removeAttribute('disabled')
+            startButton.removeAttribute('disabled')
             clearInterval(timerInterval)
         }
 
         resetButton.addEventListener('click', event => {
             breakButton.removeAttribute('disabled')
+            startButton.removeAttribute('disabled')
             clearInterval(timerInterval)
             countdownDisplay.innerHTML = '00:00'
         })
