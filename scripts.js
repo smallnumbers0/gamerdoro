@@ -181,3 +181,4 @@ function startGameTimer() {
             pauseButton.innerHTML = pause ? 'Resume' : 'Pause'
             title.innerHTML = `${displayMinutes}:${displaySeconds}`
     })
+}
