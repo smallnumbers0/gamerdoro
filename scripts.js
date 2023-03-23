@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-/***********PARTICLE JS*******************/
+/***************************************** PARTICLE JS *****************************************/
 
 var count_particles, stats, update;
   stats = new Stats;
