@@ -47,8 +47,15 @@ var count_particles, stats, update;
 let studyDuration = 50
 let gameDuration = 25
 let plusFiveMinutes = 5
-let studyCounter = 0
-let gameCounter = 0
+let studyCounter = localStorage.getItem("studyCounter");
+if (studyCounter !== null) {
+  document.getElementById("study-count").textContent = `Study Sessions: ${studyCounter}`
+}
+
+let gameCounter = localStorage.getItem("gameCounter");
+if (gameCounter !== null) {
+  document.getElementById("game-count").textContent = `Game Sessions: ${gameCounter}`
+}
 
 // Buttons
 const title = document.querySelector('title')
@@ -89,6 +96,7 @@ function startStudyTimer() {
         if (totalStudyTime < 0) {
             studyCounter++
             studyCount.innerHTML = `Study Sessions: ${studyCounter}`
+            localStorage.setItem('studyCounter', studyCounter)
             title.innerHTML = "It's Game Time!!!"
             studyButton.removeAttribute('disabled')
             gameButton.removeAttribute('disabled')
@@ -105,6 +113,13 @@ function startStudyTimer() {
             clearInterval(timerInterval)
             countdownDisplay.innerHTML = '00:00'
             title.innerHTML = `Gamerdoro`
+            localStorage.removeItem('gameCounter')
+            localStorage.removeItem('studyCounter')
+            studyCounter = 0
+            gameCounter = 0
+            document.querySelector('#study-count').innerHTML = `Study Sessions: ${studyCounter}`
+            document.querySelector('#game-count').innerHTML = `Game Sessions: ${gameCounter}`
+            
         })
     }, 1000)
 
@@ -145,6 +160,7 @@ function startGameTimer() {
         if (totalGameTime < 0) {
             gameCounter++
             gamingCount.innerHTML = `Game Sessions: ${gameCounter}`
+            localStorage.setItem('gameCounter', gameCounter)
             title.innerHTML = "GAME OVER!!!"
             gameButton.removeAttribute('disabled')
             studyButton.removeAttribute('disabled')
@@ -161,6 +177,12 @@ function startGameTimer() {
             clearInterval(timerInterval)
             countdownDisplay.innerHTML = '00:00'
             title.innerHTML = `Gamerdoro`
+            localStorage.removeItem('gameCounter')
+            localStorage.removeItem('studyCounter')
+            studyCounter = 0
+            gameCounter = 0
+            document.querySelector('#study-count').innerHTML = `Study Sessions: ${studyCounter}`
+            document.querySelector('#game-count').innerHTML = `Game Sessions: ${gameCounter}`
         })
     }, 1000)
 
