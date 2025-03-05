@@ -1,3 +1,5 @@
+### https://gamerdoro.netlify.app/
+
 Gamerdoro takes the pomodoro technique and brings it to another level. Here at Gamerdoro, we believe that the traditional 25 minute work followed by a 5 minute break is NOT enough for both working time and break time. Instead we will be implementing a 50 minute working session with 25 minute gaming session. Of course, it is understood that not all games are 25 minutes long (ex: League of Legends, FFXIV raids, Valorant Competitive, CS:GO, etc) so there will be an option to adjust both study time and game time for these games. However, there will be no excuse for other games! 
 
 We highly recommend the 50/25 timer for several reasons: 
